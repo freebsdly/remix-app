@@ -8,10 +8,14 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
+const TestPage = () => {
+
   return (
     <div className="p-0">
       <Button type={"primary"}>Ok</Button>
+      <div>content</div>
     </div>
   );
-}
+};
+
+export default TestPage;

@@ -1,29 +1,16 @@
-import React, { useState } from "react";
+import { CSSProperties, useState } from "react";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
-import { useLoaderData } from "@remix-run/react";
+import { MenuInfo } from "~/services/model";
+import { toMenus } from "~/utils/utils";
 
-type MenuItem = Required<MenuProps>["items"][number];
-
-export const loader = () => {
-  const items: MenuItem[] = [
-    {
-      label: "Home",
-      key: "home",
-    },
-    {
-      label: "Test Page",
-      key: "test",
-      disabled: true,
-    },
-  ];
-
-  return Response.json(items);
+const topMenuStyle: CSSProperties = {
+  flex: 1,
+  minWidth: 0,
 };
 
-const AppMenu: React.FC = () => {
-  const [current, setCurrent] = useState<string>("");
-  const menuData = useLoaderData<typeof loader>();
+const AppTopMenus = ({ infos }: { infos: MenuInfo[] }) => {
+  const [current, setCurrent] = useState<string>("home");
 
   const onClick: MenuProps["onClick"] = (e) => {
     console.log("click ", e);
@@ -31,13 +18,14 @@ const AppMenu: React.FC = () => {
   };
 
   return (
-    <Menu className="p-0 m-0"
+    <Menu
       onClick={onClick}
       selectedKeys={[current]}
       mode="horizontal"
-      items={menuData}
+      items={toMenus(infos)}
+      style={topMenuStyle}
     />
   );
 };
 
-export default AppMenu;
+export default AppTopMenus;

@@ -7,6 +7,12 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
-  return <>Hello, Remix!</>;
-}
+const Index = () => {
+  return (
+    <>
+      <p>Hello, Remix!</p>
+    </>
+  );
+};
+
+export default Index;

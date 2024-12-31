@@ -1,9 +1,9 @@
 {
-    "compilerOptions": {
-      "strictNullChecks": true,
-      "module": "NodeNext",
-      "jsx": "react",
-      "esModuleInterop": true
-    },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
-  }
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "module": "ESNext",
+    "jsx": "react",
+    "esModuleInterop": true,
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
+}

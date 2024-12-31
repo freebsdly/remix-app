@@ -13,6 +13,7 @@
     "prebuild": "cross-env NODE_ENV=production ts-node --project ./tsconfig.node.json ./scripts/genAntdCss.js"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.22.1",
     "@remix-run/express": "^2.15.2",
     "@remix-run/node": "^2.15.2",
     "@remix-run/react": "^2.15.2",
